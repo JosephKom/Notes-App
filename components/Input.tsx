@@ -12,7 +12,7 @@ const Input = ({title}: {title:string}) => {
   <input
     type="text"
     id="title"
-    className="mt-0.5 w-full h-10 rounded border-black border-2 shadow-lg sm:text-lg"
+    className="mt-0.5 w-100 h-10 rounded border-black border-2 shadow-lg sm:text-lg"
     onChange={(e) => setInput(e.target.value)}
     value={input}
   />

@@ -55,7 +55,7 @@ const Header = () => {
             <ul className="flex items-center gap-6 text-sm">
               <li>
                 <a
-                  className="text-black-500 transition hover:text-gray-500/75 text-3xl font-serif"
+                  className="text-black-500 transition hover:text-gray-500/75 text-5xl font-serif"
                   href="/notes-list"
                 >
                   {" "}
@@ -65,7 +65,7 @@ const Header = () => {
 
               <li>
                 <a
-                  className="text-black-500 transition hover:text-gray-500/75"
+                  className="text-black-500 transition hover:text-gray-500/75 text-xl"
                   href="/notes-list"
                 >
                   {" "}
@@ -75,7 +75,7 @@ const Header = () => {
 
               <li>
                 <a
-                  className="text-black-500 transition hover:text-gray-500/75"
+                  className="text-black-500 transition hover:text-gray-500/75 text-xl"
                   href="#"
                 >
                   {" "}
@@ -88,14 +88,14 @@ const Header = () => {
           <div className="flex items-center gap-4">
             <div className="sm:flex sm:gap-4">
               <a
-                className="block rounded-md bg-red-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-red-700"
+                className="block rounded-md bg-red-600 px-8 py-4 text-sm font-medium text-white transition hover:bg-red-700"
                 href="/create-note"
               >
                 Create Note
               </a>
 
               <a
-                className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
+                className="hidden rounded-md bg-gray-100 px-8 py-4 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
                 href="#"
               >
                 Register

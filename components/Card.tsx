@@ -9,12 +9,12 @@ const Card = ({source,title, para } : {source:string, title:string, para:string}
     alt=""
     src={source}
     width={800}
-    height={800}
+    height={900}
     className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
   />
 
   <div className="relative p-4 sm:p-6 lg:p-8">
-    <p className="text-lg font-medium tracking-widest text-red-500 uppercase">{title}</p>
+    <p className="text-lg font-medium tracking-widest text-white uppercase">{title}</p>
 
     <p className="text-xl font-bold text-white sm:text-2xl"></p>
 

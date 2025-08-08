@@ -4,8 +4,8 @@ import TextBox from '../../../components/TextBox'
 
 const page = () => {
   return (
-    <form className='border border-black font-serif'>
-        <div className='flex flex-row gap-0 justify-around mt-5'>
+    <form className='border border-black font-serif flex flex-col '>
+        <div className='flex flex-row gap-10 justify-center mt-10 items-center'>
             <Input title={"Note Title"}/>
             <Input title={"Date"}/>
         </div>

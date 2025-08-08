@@ -3,7 +3,7 @@ import React from 'react'
 const HomeButton = () => {
   return (
    <a
-  className="group relative inline-block overflow-hidden border border-red-600 px-8 py-3 focus:ring-3 focus:outline-hidden"
+  className="group relative inline-block overflow-hidden border border-red-600 px-8 py-3 focus:ring-3 focus:outline-hidden w-60 text-center h-15"
   href="/create-note"
 >
   <span
@@ -11,7 +11,7 @@ const HomeButton = () => {
   ></span>
 
   <span
-    className="relative text-sm font-medium text-red-600 transition-colors group-hover:text-white"
+    className="relative font-medium text-red-600 transition-colors group-hover:text-white text-xl"
   >
     Get Started
   </span>

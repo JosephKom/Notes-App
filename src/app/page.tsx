@@ -3,6 +3,7 @@ import Link from "next/link";
 import Card from "../../components/Card";
 import { title } from "process";
 import HomeButton from "../../components/HomeButton";
+import Banner from "../../components/Banner";
 
 export default function Home() {
   const source1:string = "/images/messynotes.jpg"
@@ -22,8 +23,9 @@ export default function Home() {
   return (
     <>
     <div className="flex flex-col gap-6 flex-wrap m-5 justify-around">
+      <Banner />
       <div className="flex flex-col font-serif gap-10">
-        <h1 className="m-1.5 font-bold text-center text-xl">Experience The World's Premier Note taking App</h1>
+        <h1 className="m-1.5 font-bold text-center text-3xl">Experience The World's Premier Note taking App</h1>
         <Card source={source1} para={para1} title={title1} />
         <Card source={source2} para={para2} title={title2} />
         <Card source={source3} para={para3} title={title3} />
