@@ -1,6 +1,15 @@
 import React from "react";
+interface Prop{
+  note: {
+    _id: string,
+    title: string,
+    note: string,
+    createdAt: string,
+  }
+}
 
-const NoteCard = () => {
+const NoteCard = ({note}: Prop) => {
+
   return (
     <article className="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg w-150 h-150">
       <img
@@ -12,18 +21,17 @@ const NoteCard = () => {
       <div className="bg-white p-4 sm:p-6">
         <time dateTime="2022-10-10" className="block text-xs text-gray-500">
           {" "}
-          10th Oct 2022{" "}
+          {note.createdAt}{" "}
         </time>
 
         <a href="#">
           <h3 className="mt-0.5 text-lg text-gray-900">
-            This is the note title
+            {note.title}
           </h3>
         </a>
 
         <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-          Sample note content goes here. This is a brief description of the note
-          that gives an overview of its content and purpose.
+          {note.note}
         </p>
       </div>
     </article>

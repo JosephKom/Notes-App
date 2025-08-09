@@ -15,8 +15,8 @@ const TextBox = ({note, setNote}: Prop) => {
 
     <textarea
       id="Notes"
-      className="mt-0.5 w-full text-5xl resize-none rounded border-black border-2 shadow-xl  sm:text-sm"
-      rows={20}
+      className="mt-0.5 w-full text-5xl resize-none rounded border-black border-4 shadow-xl  sm:text-sm p-3"
+      rows={10}
       value={note}
       onChange={(e) => setNote(e.target.value)}
     ></textarea>

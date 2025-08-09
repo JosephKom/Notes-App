@@ -17,14 +17,14 @@ export async function DELETE(_req: Request, {params} : {params: {id: string}}){
 export async function PATCH(request: Request, {params}: {params: {id: string}}){
     const {id} = params;
 
-    const { title, content} = await request.json();
+    const { title, note} = await request.json();
 
     await connectToDB();
 
 
     const updatedNote = await Note.findByIdAndUpdate(
         id,
-        { title, content },
+        { title, note },
         { new: true}
     );
 
@@ -33,19 +33,4 @@ export async function PATCH(request: Request, {params}: {params: {id: string}}){
     }
 
     return NextResponse.json(updatedNote);
-}
-
-export async function POST(request: Request){
-    try{
-        const{ title, content } = await request.json();
-
-        await connectToDB();
-
-        const newNote = await Note.create({title, content});
-
-        return NextResponse.json(newNote, {status: 201});
-    } catch(err){
-        console.error("failed to create note", err);
-        return new NextResponse("Failed to create note", { status: 500});
-    }
 }

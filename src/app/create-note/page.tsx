@@ -17,6 +17,8 @@ const page = () => {
         body: JSON.stringify({ title, note }),
       });
 
+      console.log("Creating note with:", {title,note});
+
       if (!res.ok) throw new Error("Failed to create note");
 
       const newNote = await res.json();
@@ -48,6 +50,7 @@ const page = () => {
           <button
             type="button"
             className="rounded border border-gray-300 px-3 py-1.5 text-sm font-medium text-black shadow-sm transition-colors hover:bg-gray-100"
+            onClick={handleNote}
           >
             Create Note
           </button>
