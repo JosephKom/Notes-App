@@ -1,8 +1,12 @@
 "use client"
 import React, { useState } from 'react'
 
-const TextBox = () => {
-    const [note, setNote] = useState("");
+interface Prop {
+  note: string,
+  setNote: (value: string) => void
+}
+
+const TextBox = ({note, setNote}: Prop) => {
  
   return (
     <div>
@@ -18,23 +22,6 @@ const TextBox = () => {
     ></textarea>
   </label>
 
-  <div className="mt-1.5 flex items-center justify-end gap-2">
-    <button
-      type="button"
-      className="rounded bg-red-600 border border-transparent px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-red-800"
-      onClick={()=> setNote("")}
-
-    >
-      Clear
-    </button>
-
-    <button
-      type="button"
-      className="rounded border border-gray-300 px-3 py-1.5 text-sm font-medium text-black shadow-sm transition-colors hover:bg-gray-100"
-    >
-      Create Note
-    </button>
-  </div>
 </div>
   )
 }
