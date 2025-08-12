@@ -3,7 +3,7 @@
 import { signIn, signOut } from "next-auth/react";
 
 export const login = async () => {
-  await signIn("google", { redirectTo: "/" }); 
+  await signIn("google", { callbackUrl: "/" }); 
 };
 
 export const logout = async () => {

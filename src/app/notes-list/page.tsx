@@ -1,30 +1,35 @@
-"use client"
+
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'next/navigation' 
-import NoteCard from '../../../components/NoteCard'
-import AddNote from '../../../components/AddNote'
+import NoteCard from '../../../components/NoteCard';
+import AddNote from '../../../components/AddNote';
+import { getServerSession } from "next-auth";
+import { connectToDB } from '../../../lib/mongodb';
+import { Note } from '../../../models/Note';
+import { authOptions } from '../../../lib/auth';
+import Link from 'next/link';
 
-const page = () => {
-    const params = useParams();
-    const id = params?.id;
-    const [notes, setNotes] = useState([]);
-    
-    useEffect(() =>{
-      const fetchNotes = async () =>{
-        try{
-          const res = await fetch(`/api/notes/${id}`);
-          if(!res) throw new Error("Failed to fetch notes");
 
-          const data = await res.json();
-          setNotes(data);
-        }catch(err){
-          console.error(err);
-        }
-      };
-      if(id)
-      fetchNotes();
-    }, [id])
+const page = async () => {
+  const session = await getServerSession(authOptions);
   
+  if(!session?.user?.email){
+    return <p>You must be signed in to view or create notes.</p>
+  }
+
+  await connectToDB();
+  const notes = await Note.find({ userEmail: session.user.email}).lean();
+
+  if(notes.length === 0){
+    return (
+    <>
+    <p>Create your first note.</p>
+     <div className='flex flex-row justify-center m-10'>
+            <AddNote />
+    </div>
+
+    </>
+)
+  }
 
 
   return (
@@ -36,7 +41,9 @@ const page = () => {
 
         <div>
           {notes.map((note:any) =>(
-            <NoteCard key={note._id} note={note} />
+            <Link key={note._id} href={`/notes-list/${note._id}`}>
+                <NoteCard note={note} />
+            </Link>
           ))}
         </div>
         

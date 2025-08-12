@@ -1,5 +1,5 @@
 import { connectToDB } from "../../../../../lib/mongodb";
-import Note from "../../../../../models/Note";
+import { Note } from "../../../../../models/Note";
 import { NextResponse } from "next/server";
 
 export async function GET(_req: Request, {params} : {params: {id: string}}){

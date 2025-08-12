@@ -1,5 +1,3 @@
-import { signIn, signOut } from "next-auth/react";
-import { redirect } from "next/dist/server/api-utils";
 import NextAuth from "next-auth";
 import Google from "next-auth/providers/google";
 import { AuthOptions } from "next-auth";
@@ -13,4 +11,5 @@ export const authOptions: AuthOptions = {
         }),
     ],
     secret: process.env.NEXTAUTH_SECRET,
+    debug: true,
 };
